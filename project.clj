@@ -1,4 +1,4 @@
-(defproject me.flowthing/raven "0.1.5"
+(defproject me.flowthing/raven "0.1.6"
   :description "A simple notifications library using reagent."
   :url "http://www.github.com/eerohele/raven"
   :license "Eclipse License"
