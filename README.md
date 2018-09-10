@@ -1,7 +1,7 @@
 # raven
 A tiny Clojurescript notification library based on [Toastr](http://codeseven.github.io/toastr/demo.html)
 
-[![Clojars Project](http://clojars.org/thinktopic/raven/latest-version.svg)](http://clojars.org/thinktopic/raven)
+[![Clojars Project](http://clojars.org/me.flowthing/raven/latest-version.svg)](http://clojars.org/me.flowthing/raven)
 
 ### Use
 

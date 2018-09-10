@@ -1,9 +1,9 @@
 (defproject me.flowthing/raven "0.1.5"
   :description "A simple notifications library using reagent."
-  :url "http://www.github.com/thinktopic/raven"
+  :url "http://www.github.com/eerohele/raven"
   :license "Eclipse License"
   :scm {:name "git"
-        :url "https://github.com/thinktopic/raven"}
+        :url "https://github.com/eerohele/raven"}
 
   :source-paths ["src/clj" "src/cljs"]
 
