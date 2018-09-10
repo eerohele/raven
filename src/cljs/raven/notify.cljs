@@ -16,7 +16,7 @@
         ;; on animation end remove this from pending-notifications*
         (.addEventListener node
           "animationend"
-          (fn [_] (swap! pending-notifications* #(remove (partial = m) %)))
+          (fn [_] (swap! pending-notifications* #(vec (remove (partial = m) %))))
           false))
       delay))))
 
@@ -50,8 +50,7 @@
   (fn []
     [:div.notify-wrapper
      (for [n @pending-notifications*]
-       ^{:key (random-uuid)}
-       [notification n])]))
+       ^{:key (:id n)} [notification n])]))
 
 
 (defn notify
@@ -62,7 +61,8 @@
                     delay 5000}}]
    (let [opts {:type type
                :delay delay
-               :message message}]
+               :message message
+               :id (random-uuid)}]
      (swap! pending-notifications* #(conj % opts)))))
 
 
