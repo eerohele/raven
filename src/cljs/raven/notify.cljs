@@ -1,8 +1,9 @@
 (ns raven.notify
-  (:require [reagent.core :as reagent :refer [atom]]))
+  (:require [reagent.core :as reagent]
+            [reagent.dom :as dom]))
 
 
-(defonce pending-notifications* (atom []))
+(defonce pending-notifications* (reagent/atom []))
 
 
 (defn remove-notification
@@ -23,12 +24,12 @@
 
 (defn notification
   [m]
-  (let [state* (atom {:animate-out false
-                      :node nil})]
+  (let [state* (reagent/atom {:animate-out false
+                              :node nil})]
     (reagent/create-class
      {:component-did-mount
       (fn [this]
-        (let [node (reagent/dom-node this)]
+        (let [node (dom/dom-node this)]
           (swap! state* assoc :node node)
           (remove-notification state* m (:delay m))))
       :reagent-render
