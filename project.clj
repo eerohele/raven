@@ -7,8 +7,8 @@
 
   :source-paths ["src/clj" "src/cljs"]
 
-  :plugins [[lein-environ "1.0.0"]
-            [lein-garden "0.2.6"]]
+  :plugins [[lein-environ "1.1.0"]
+            [lein-garden "0.3.0"]]
 
   :garden {:builds [{:id "dev"
                      :pretty-print? true
@@ -23,8 +23,8 @@
                                     [:cljsbuild :builds :app :compiler :output-dir]
                                     [:cljsbuild :builds :app :compiler :output-to]]
 
-  :profiles {:provided {:dependencies [[org.clojure/clojurescript "1.7.48"]
-                                       [reagent "0.5.0"]]}
+  :profiles {:provided {:dependencies [[org.clojure/clojurescript "1.10.597"]
+                                       [reagent "0.10.0"]]}
 
              :dev {:repl-options {:init-ns user
                                   :nrepl-middleware []}
@@ -41,32 +41,32 @@
                                                          :main "raven.dev"
                                                          :source-map true}}}}
 
-                   :dependencies [[garden "1.2.5"]
-                                  [cljsjs/react "0.13.3-0"]
-                                  [org.clojure/clojure "1.7.0"]
-                                  [environ "1.0.0"]
-                                  [ring-server "0.4.0"]
-                                  [ring "1.3.2"]
-                                  [ring/ring-defaults "0.1.5"]
-                                  [prone "0.8.2"]
-                                  [compojure "1.3.3"]
-                                  [metosin/compojure-api "0.22.1"]
+                   :dependencies [[garden "1.3.9"]
+                                  [cljsjs/react "16.13.0-0"]
+                                  [org.clojure/clojure "1.10.1"]
+                                  [environ "1.1.0"]
+                                  [ring-server "0.5.0"]
+                                  [ring "1.8.0"]
+                                  [ring/ring-defaults "0.3.2"]
+                                  [prone "2020-01-17"]
+                                  [compojure "1.6.1"]
+                                  [metosin/compojure-api "1.1.13"]
                                   [hiccup "1.0.5"]
                                   [secretary "1.2.3"]
-                                  [com.taoensso/timbre "4.0.2"]
-                                  [org.danielsz/system "0.1.8"]
-                                  [http-kit "2.1.19"]
+                                  [com.taoensso/timbre "4.10.0"]
+                                  [org.danielsz/system "0.4.5"]
+                                  [http-kit "2.3.0"]
                                   [ring-mock "0.1.5"]
-                                  [ring/ring-devel "1.3.2"]
-                                  [leiningen-core "2.5.1"]
-                                  [lein-figwheel "0.3.5"]
-                                  [reagent-utils "0.1.5"]
-                                  [org.clojure/tools.nrepl "0.2.10"]
-                                  [pjstadig/humane-test-output "0.7.0"]]
+                                  [ring/ring-devel "1.8.0"]
+                                  [leiningen-core "2.9.3"]
+                                  [lein-figwheel "0.5.19"]
+                                  [reagent-utils "0.3.3"]
+                                  [org.clojure/tools.nrepl "0.2.13"]
+                                  [pjstadig/humane-test-output "0.10.0"]]
 
                    :source-paths ["env/dev/clj"]
-                   :plugins [[lein-figwheel "0.3.3"]
-                             [lein-cljsbuild "1.0.6"]]
+                   :plugins [[lein-figwheel "0.5.19"]
+                             [lein-cljsbuild "1.1.7"]]
 
                    :injections [(require 'pjstadig.humane-test-output)
                                 (pjstadig.humane-test-output/activate!)]
